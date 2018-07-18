@@ -23,8 +23,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface NotContainUnderscoreFollowedByPeriod {
 
-    boolean leaveBlank() default  true;
-
     String message() default "{com.github.ankurpathak.bean.constraints.NotContainUnderscoreFollowedByPeriod.message}";
 
     Class<?>[] groups() default {};

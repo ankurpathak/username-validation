@@ -20,7 +20,7 @@ public class NotContainUnderscoreFollowedByPeriodValidator implements Constraint
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext constraintValidatorContext) {
-        return UsernameValidator.notContainUnderscoreFollowedByPeriod(username, config.leaveBlank());
+        return UsernameValidator.notContainUnderscoreFollowedByPeriod(username);
     }
 
 }

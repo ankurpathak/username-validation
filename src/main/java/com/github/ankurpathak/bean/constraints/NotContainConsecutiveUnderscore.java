@@ -23,8 +23,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface NotContainConsecutiveUnderscore {
 
-    boolean leaveBlank() default  true;
-
     String message() default "{com.github.ankurpathak.bean.constraints.NotContainConsecutiveUnderscore.message}";
 
     Class<?>[] groups() default {};

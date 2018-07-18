@@ -23,8 +23,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface EndWithAlphaNumeric {
 
-    boolean leaveBlank() default  true;
-
     String message() default "{com.github.ankurpathak.bean.constraints.EndWithAlphaNumeric.message}";
 
     Class<?>[] groups() default {};
