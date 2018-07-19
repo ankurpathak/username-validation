@@ -17,7 +17,7 @@ import java.lang.annotation.*;
 @Pattern(regexp = "[a-z0-9._]+")
 @ReportAsSingleViolation
 public @interface UsernamePattern {
-    public abstract Class<?>[] groups() default {};
-    public abstract String message() default "{com.github.ankurpathak.bean.constraints.UsernamePattern.message}";
-    public abstract Class<? extends Payload>[] payload() default {};
+    Class<?>[] groups() default {};
+    String message() default "{com.github.ankurpathak.bean.constraints.UsernamePattern.message}";
+    Class<? extends Payload>[] payload() default {};
 }

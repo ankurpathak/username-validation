@@ -1,6 +1,5 @@
 package com.github.ankurpathak;
 
-import com.github.ankurpathak.bean.constraints.validator.NotContainUnderscoreFollowedByPeriodValidator;
 import com.github.ankurpathak.util.Strings;
 
 public class UsernameValidator {
