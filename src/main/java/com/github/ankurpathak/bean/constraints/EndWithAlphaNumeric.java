@@ -9,18 +9,13 @@ import com.github.ankurpathak.bean.constraints.validator.EndWithAlphaNumericVali
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
-import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
-
-@Target({METHOD, FIELD, ANNOTATION_TYPE})
-@Retention(RUNTIME)
+@Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE})
+@Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = EndWithAlphaNumericValidator.class)
 @Documented
+@Repeatable(EndWithAlphaNumeric.List.class)
 public @interface EndWithAlphaNumeric {
 
     String message() default "{com.github.ankurpathak.bean.constraints.EndWithAlphaNumeric.message}";
@@ -28,4 +23,11 @@ public @interface EndWithAlphaNumeric {
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
+
+    @Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE})
+    @Retention(RetentionPolicy.RUNTIME)
+    @Documented
+    @interface List {
+        EndWithAlphaNumeric[] value();
+    }
 }

@@ -48,8 +48,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>7</maven.compiler.source>
-        <maven.compiler.target>7</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <junit.version>4.12</junit.version>
         <hamcrest.version>1.0.0.1</hamcrest.version>
         <bean.validation.version>2.0.1.Final</bean.validation.version>
