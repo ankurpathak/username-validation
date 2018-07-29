@@ -21,7 +21,7 @@ public class StartWithAlphaNumericValidator implements ConstraintValidator<Start
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext constraintValidatorContext) {
-        return UsernameValidator.startWithAlphaNumeric(username);
+        return UsernameValidator.startWithAlphaNumeric(username, config.ignoreBlank());
     }
 
 }

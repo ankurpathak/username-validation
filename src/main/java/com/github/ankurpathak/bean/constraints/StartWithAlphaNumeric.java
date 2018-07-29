@@ -19,6 +19,8 @@ import java.lang.annotation.*;
 @Repeatable(StartWithAlphaNumeric.List.class)
 public @interface StartWithAlphaNumeric {
 
+    boolean ignoreBlank() default true;
+
     String message() default "{com.github.ankurpathak.bean.constraints.StartWithAlphaNumeric.message}";
 
     Class<?>[] groups() default {};

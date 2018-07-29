@@ -21,7 +21,7 @@ public class EndWithAlphaNumericValidator implements ConstraintValidator<EndWith
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext constraintValidatorContext) {
-        return UsernameValidator.endWithAlphaNumeric(username);
+        return UsernameValidator.endWithAlphaNumeric(username, config.ignoreBlank());
     }
 
 }

@@ -18,6 +18,8 @@ import java.lang.annotation.*;
 @Repeatable(EndWithAlphaNumeric.List.class)
 public @interface EndWithAlphaNumeric {
 
+    boolean ignoreBlank() default true;
+
     String message() default "{com.github.ankurpathak.bean.constraints.EndWithAlphaNumeric.message}";
 
     Class<?>[] groups() default {};
