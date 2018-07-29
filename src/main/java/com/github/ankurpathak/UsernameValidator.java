@@ -35,22 +35,29 @@ public class UsernameValidator {
         }
     }
 
-
     public static boolean endWithAlphaNumeric(String username) {
-        if (Strings.isBlank(username)) {
-            return true;
-        } else {
-            Character end = Strings.lastChar(username);
-            return end != null && (Character.isDigit(end) || Character.isAlphabetic(end));
-        }
+        return endWithAlphaNumeric(username, true);
+    }
+
+
+    public static boolean endWithAlphaNumeric(String username, boolean ignoreBlank) {
+        return startOrEndWithAlphaNumeric(username, Strings.lastChar(username), ignoreBlank);
+    }
+
+    public static boolean startWithAlphaNumeric(String username, boolean ignoreBlank) {
+        return startOrEndWithAlphaNumeric(username, Strings.firstChar(username), ignoreBlank);
     }
 
     public static boolean startWithAlphaNumeric(String username) {
+        return startWithAlphaNumeric(username, true);
+    }
+
+
+    private static boolean startOrEndWithAlphaNumeric(String username, Character startOrEnd, boolean ignoreBlank) {
         if (Strings.isBlank(username)) {
-            return true;
+            return ignoreBlank;
         } else {
-            Character start = Strings.firstChar(username);
-            return start != null && (Character.isDigit(start) || Character.isAlphabetic(start));
+            return startOrEnd != null && (Character.isDigit(startOrEnd) || Character.isAlphabetic(startOrEnd));
         }
     }
 

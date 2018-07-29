@@ -64,8 +64,8 @@ public class UsernameValidatorTest {
         Assert.assertTrue(UsernameValidator.startWithAlphaNumeric("1BeanValidation"));
         Assert.assertTrue(UsernameValidator.startWithAlphaNumeric(""));
         Assert.assertTrue(UsernameValidator.startWithAlphaNumeric(null));
-
-
+        Assert.assertFalse(UsernameValidator.startWithAlphaNumeric("", false));
+        Assert.assertFalse(UsernameValidator.startWithAlphaNumeric(null, false));
     }
 
     @Test
@@ -80,6 +80,9 @@ public class UsernameValidatorTest {
         Assert.assertTrue(UsernameValidator.endWithAlphaNumeric("BeanValidation1"));
         Assert.assertTrue(UsernameValidator.endWithAlphaNumeric(""));
         Assert.assertTrue(UsernameValidator.endWithAlphaNumeric(null));
+        Assert.assertFalse(UsernameValidator.endWithAlphaNumeric("", false));
+        Assert.assertFalse(UsernameValidator.endWithAlphaNumeric(null, false));
+
     }
 
     @Test
