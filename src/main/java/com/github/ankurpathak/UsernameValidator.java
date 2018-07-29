@@ -40,12 +40,8 @@ public class UsernameValidator {
         if (Strings.isBlank(username)) {
             return true;
         } else {
-            if (Strings.isBlank(username)) {
-                return false;
-            } else {
-                Character end = Strings.lastChar(username);
-                return end != null && (Character.isDigit(end) || Character.isAlphabetic(end));
-            }
+            Character end = Strings.lastChar(username);
+            return end != null && (Character.isDigit(end) || Character.isAlphabetic(end));
         }
     }
 
@@ -53,12 +49,8 @@ public class UsernameValidator {
         if (Strings.isBlank(username)) {
             return true;
         } else {
-            if (Strings.isBlank(username)) {
-                return false;
-            } else {
-                Character start = Strings.firstChar(username);
-                return start != null && (Character.isDigit(start) || Character.isAlphabetic(start));
-            }
+            Character start = Strings.firstChar(username);
+            return start != null && (Character.isDigit(start) || Character.isAlphabetic(start));
         }
     }
 
