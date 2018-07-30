@@ -2,12 +2,20 @@ package com.github.ankurpathak;
 
 import com.github.ankurpathak.util.Strings;
 
+import java.util.regex.Pattern;
+
 public class UsernameValidator {
 
     public static final String CONSECUTIVE_PERIOD = "..";
     public static final String CONSECUTIVE_UNDERSCORE = "__";
     public static final String PERIOD_FOLLOWED_BY_UNDERSCORE = "._";
     public static final String UNDERSCORE_FOLLOWED_BY_PERIOD = "_.";
+    public static final String START_USERNAME_PATTERN = "[a-z0-9";
+    public static final String PERIOD = ".";
+    public static final String UNDERSCORE = "_";
+    public static final String ONE_OR_MORE = "+";
+    public static final String ZERO_OR_MORE = "*";
+    public static final String END_USERNAME_PATTERN = "]";
 
     public static boolean notContainConsecutivePeriod(String username) {
         return notContainConsecutivePattern(username, CONSECUTIVE_PERIOD);
@@ -59,6 +67,21 @@ public class UsernameValidator {
         } else {
             return startOrEnd != null && (Character.isDigit(startOrEnd) || Character.isAlphabetic(startOrEnd));
         }
+    }
+
+
+    public static boolean containOnlyAlphaNumeric(String username, boolean includePeriod, boolean includeUnderscore, boolean ignoreBlank){
+        StringBuffer sb = new StringBuffer(START_USERNAME_PATTERN);
+        if(includePeriod)
+            sb.append(PERIOD);
+        if(includeUnderscore)
+            sb.append(UNDERSCORE);
+        sb.append(END_USERNAME_PATTERN);
+        if(ignoreBlank)
+            sb.append(ZERO_OR_MORE);
+        else
+            sb.append(ONE_OR_MORE);
+        return Pattern.matches(sb.toString(), username != null ? username : Strings.BLANK);
     }
 
 
