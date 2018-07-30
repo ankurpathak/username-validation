@@ -5,7 +5,6 @@ import com.github.ankurpathak.bean.constraints.UsernamePattern;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.text.MessageFormat;
 
 public class UsernamePatternValidator implements ConstraintValidator<UsernamePattern, String> {
 
