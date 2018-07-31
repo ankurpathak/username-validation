@@ -1,7 +1,6 @@
-package com.github.ankurpathak.username;
+package com.github.ankurpathak.username.username;
 
-import com.github.ankurpathak.UsernameValidator;
-import com.github.ankurpathak.util.Strings;
+import com.github.ankurpathak.username.UsernameValidator;
 import org.junit.Assert;
 import org.junit.Test;
 

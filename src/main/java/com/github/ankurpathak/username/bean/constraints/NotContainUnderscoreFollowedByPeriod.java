@@ -1,26 +1,25 @@
-package com.github.ankurpathak.bean.constraints;
+package com.github.ankurpathak.username.bean.constraints;
 
 /**
  * Created by ankur on 04-02-2017.
  */
 
 
-import com.github.ankurpathak.bean.constraints.validator.EndWithAlphaNumericValidator;
+import com.github.ankurpathak.username.bean.constraints.validator.NotContainUnderscoreFollowedByPeriodValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
 
+
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = EndWithAlphaNumericValidator.class)
+@Constraint(validatedBy = NotContainUnderscoreFollowedByPeriodValidator.class)
 @Documented
-@Repeatable(EndWithAlphaNumeric.List.class)
-public @interface EndWithAlphaNumeric {
+@Repeatable(NotContainUnderscoreFollowedByPeriod.List.class)
+public @interface NotContainUnderscoreFollowedByPeriod {
 
-    boolean ignoreBlank() default true;
-
-    String message() default "{com.github.ankurpathak.bean.constraints.EndWithAlphaNumeric.message}";
+    String message() default "{com.github.ankurpathak.username.bean.constraints.NotContainUnderscoreFollowedByPeriod.message}";
 
     Class<?>[] groups() default {};
 
@@ -30,6 +29,6 @@ public @interface EndWithAlphaNumeric {
     @Retention(RetentionPolicy.RUNTIME)
     @Documented
     @interface List {
-        EndWithAlphaNumeric[] value();
+        NotContainUnderscoreFollowedByPeriod[] value();
     }
 }

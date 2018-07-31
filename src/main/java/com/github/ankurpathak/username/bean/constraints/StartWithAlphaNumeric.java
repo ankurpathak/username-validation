@@ -1,11 +1,11 @@
-package com.github.ankurpathak.bean.constraints;
+package com.github.ankurpathak.username.bean.constraints;
 
 /**
  * Created by ankur on 04-02-2017.
  */
 
 
-import com.github.ankurpathak.bean.constraints.validator.StartWithAlphaNumericValidator;
+import com.github.ankurpathak.username.bean.constraints.validator.StartWithAlphaNumericValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -21,7 +21,7 @@ public @interface StartWithAlphaNumeric {
 
     boolean ignoreBlank() default true;
 
-    String message() default "{com.github.ankurpathak.bean.constraints.StartWithAlphaNumeric.message}";
+    String message() default "{com.github.ankurpathak.username.bean.constraints.StartWithAlphaNumeric.message}";
 
     Class<?>[] groups() default {};
 

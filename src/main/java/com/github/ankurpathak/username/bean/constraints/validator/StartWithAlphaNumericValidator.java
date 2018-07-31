@@ -1,8 +1,8 @@
-package com.github.ankurpathak.bean.constraints.validator;
+package com.github.ankurpathak.username.bean.constraints.validator;
 
 
-import com.github.ankurpathak.UsernameValidator;
-import com.github.ankurpathak.bean.constraints.StartWithAlphaNumeric;
+import com.github.ankurpathak.username.UsernameValidator;
+import com.github.ankurpathak.username.bean.constraints.StartWithAlphaNumeric;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

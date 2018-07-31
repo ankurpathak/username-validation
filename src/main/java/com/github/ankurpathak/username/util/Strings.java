@@ -1,4 +1,4 @@
-package com.github.ankurpathak.util;
+package com.github.ankurpathak.username.util;
 
 import java.util.Objects;
 

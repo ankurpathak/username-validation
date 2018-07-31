@@ -1,6 +1,6 @@
-package com.github.ankurpathak;
+package com.github.ankurpathak.username;
 
-import com.github.ankurpathak.util.Strings;
+import com.github.ankurpathak.username.util.Strings;
 
 import java.util.regex.Pattern;
 

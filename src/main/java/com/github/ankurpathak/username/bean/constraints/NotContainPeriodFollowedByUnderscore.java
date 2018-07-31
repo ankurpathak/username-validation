@@ -1,11 +1,11 @@
-package com.github.ankurpathak.bean.constraints;
+package com.github.ankurpathak.username.bean.constraints;
 
 /**
  * Created by ankur on 04-02-2017.
  */
 
 
-import com.github.ankurpathak.bean.constraints.validator.NotContainConsecutivePeriodValidator;
+import com.github.ankurpathak.username.bean.constraints.validator.NotContainPeriodFollowedByUnderscoreValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -14,12 +14,12 @@ import java.lang.annotation.*;
 
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = NotContainConsecutivePeriodValidator.class)
+@Constraint(validatedBy = NotContainPeriodFollowedByUnderscoreValidator.class)
 @Documented
-@Repeatable(NotContainConsecutivePeriod.List.class)
-public @interface NotContainConsecutivePeriod {
+@Repeatable(NotContainPeriodFollowedByUnderscore.List.class)
+public @interface NotContainPeriodFollowedByUnderscore {
 
-    String message() default "{com.github.ankurpathak.bean.constraints.NotContainConsecutivePeriod.message}";
+    String message() default "{com.github.ankurpathak.username.bean.constraints.NotContainPeriodFollowedByUnderscore.message}";
 
     Class<?>[] groups() default {};
 
@@ -29,6 +29,6 @@ public @interface NotContainConsecutivePeriod {
     @Retention(RetentionPolicy.RUNTIME)
     @Documented
     @interface List {
-        NotContainConsecutivePeriod[] value();
+        NotContainPeriodFollowedByUnderscore[] value();
     }
 }

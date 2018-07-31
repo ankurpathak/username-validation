@@ -1,8 +1,8 @@
-package com.github.ankurpathak.bean.constraints.validator;
+package com.github.ankurpathak.username.bean.constraints.validator;
 
 
-import com.github.ankurpathak.UsernameValidator;
-import com.github.ankurpathak.bean.constraints.NotContainPeriodFollowedByUnderscore;
+import com.github.ankurpathak.username.UsernameValidator;
+import com.github.ankurpathak.username.bean.constraints.NotContainPeriodFollowedByUnderscore;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

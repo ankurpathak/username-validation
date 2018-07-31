@@ -1,17 +1,17 @@
-package com.github.ankurpathak.bean.constraints.validator;
+package com.github.ankurpathak.username.bean.constraints.validator;
 
-import com.github.ankurpathak.UsernameValidator;
-import com.github.ankurpathak.bean.constraints.UsernamePattern;
+import com.github.ankurpathak.username.UsernameValidator;
+import com.github.ankurpathak.username.bean.constraints.UsernamePattern;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 public class UsernamePatternValidator implements ConstraintValidator<UsernamePattern, String> {
 
-    public static final String MESSAGE_TEMPLATE_USE_UNDERSCORE = "{com.github.ankurpathak.bean.constraints.UsernamePattern.includeUnderscore.message}";
-    public static final String MESSAGE_TEMPLATE_USE_BOTH = "{com.github.ankurpathak.bean.constraints.UsernamePattern.includeBoth.message}";
-    public static final String MESSAGE_TEMPLATE_USE_NONE = "{com.github.ankurpathak.bean.constraints.UsernamePattern.includeNone.message}";
-    public static final String MESSAGE_TEMPLATE_USE_PERIOD = "{com.github.ankurpathak.bean.constraints.UsernamePattern.message}";
+    public static final String MESSAGE_TEMPLATE_USE_UNDERSCORE = "{com.github.ankurpathak.username.bean.constraints.UsernamePattern.includeUnderscore.message}";
+    public static final String MESSAGE_TEMPLATE_USE_BOTH = "{com.github.ankurpathak.username.bean.constraints.UsernamePattern.includeBoth.message}";
+    public static final String MESSAGE_TEMPLATE_USE_NONE = "{com.github.ankurpathak.username.bean.constraints.UsernamePattern.includeNone.message}";
+    public static final String MESSAGE_TEMPLATE_USE_PERIOD = "{com.github.ankurpathak.username.bean.constraints.UsernamePattern.message}";
 
 
     private UsernamePattern config;
