@@ -1,4 +1,4 @@
-package com.github.ankurpathak.username.username;
+package com.github.ankurpathak.username;
 
 import com.github.ankurpathak.username.UsernameValidator;
 import org.junit.Assert;
