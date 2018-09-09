@@ -17,27 +17,49 @@ public class UsernameValidator {
     public static final String ZERO_OR_MORE = "*";
     public static final String END_USERNAME_PATTERN = "]";
 
+    public static boolean notContainConsecutivePeriod(String username, boolean ignoreBlank) {
+        return notContainConsecutivePattern(username, CONSECUTIVE_PERIOD, ignoreBlank);
+    }
+
     public static boolean notContainConsecutivePeriod(String username) {
-        return notContainConsecutivePattern(username, CONSECUTIVE_PERIOD);
+        return notContainConsecutivePeriod(username, true);
     }
 
 
+    public static boolean notContainConsecutiveUnderscore(String username, boolean ignoreBlank) {
+        return notContainConsecutivePattern(username, CONSECUTIVE_UNDERSCORE, ignoreBlank);
+    }
+
     public static boolean notContainConsecutiveUnderscore(String username) {
-        return notContainConsecutivePattern(username, CONSECUTIVE_UNDERSCORE);
+        return notContainConsecutiveUnderscore(username, true);
+    }
+
+    public static boolean notContainPeriodFollowedByUnderscore(String username, boolean ignoreBlank) {
+        return notContainConsecutivePattern(username, PERIOD_FOLLOWED_BY_UNDERSCORE, ignoreBlank);
     }
 
     public static boolean notContainPeriodFollowedByUnderscore(String username) {
-        return notContainConsecutivePattern(username, PERIOD_FOLLOWED_BY_UNDERSCORE);
+        return notContainPeriodFollowedByUnderscore(username, true);
+    }
+
+
+    public static boolean notContainUnderscoreFollowedByPeriod(String username, boolean ignoreBlank) {
+        return notContainConsecutivePattern(username, UNDERSCORE_FOLLOWED_BY_PERIOD, ignoreBlank);
     }
 
     public static boolean notContainUnderscoreFollowedByPeriod(String username) {
-        return notContainConsecutivePattern(username, UNDERSCORE_FOLLOWED_BY_PERIOD);
+        return notContainUnderscoreFollowedByPeriod(username, true);
     }
 
 
-    private static boolean notContainConsecutivePattern(String username, String consecutivePattern) {
+        private static boolean notContainConsecutivePattern(String username, String consecutivePattern) {
+        return notContainConsecutivePattern(username, consecutivePattern, true);
+    }
+
+
+    private static boolean notContainConsecutivePattern(String username, String consecutivePattern, boolean ignoreBlank) {
         if (Strings.isBlank(username)) {
-            return true;
+            return ignoreBlank;
         } else {
             return !username.contains(consecutivePattern);
         }
@@ -70,14 +92,14 @@ public class UsernameValidator {
     }
 
 
-    public static boolean containOnlyAlphaNumeric(String username, boolean includePeriod, boolean includeUnderscore, boolean ignoreBlank){
+    public static boolean containOnlyAlphaNumeric(String username, boolean includePeriod, boolean includeUnderscore, boolean ignoreBlank) {
         StringBuffer sb = new StringBuffer(START_USERNAME_PATTERN);
-        if(includePeriod)
+        if (includePeriod)
             sb.append(PERIOD);
-        if(includeUnderscore)
+        if (includeUnderscore)
             sb.append(UNDERSCORE);
         sb.append(END_USERNAME_PATTERN);
-        if(ignoreBlank)
+        if (ignoreBlank)
             sb.append(ZERO_OR_MORE);
         else
             sb.append(ONE_OR_MORE);

@@ -21,6 +21,9 @@ public @interface NotContainConsecutivePeriod {
 
     String message() default "{com.github.ankurpathak.username.bean.constraints.NotContainConsecutivePeriod.message}";
 
+    boolean ignoreBlank() default true;
+
+
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};

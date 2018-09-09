@@ -20,6 +20,6 @@ public class NotContainConsecutiveUnderscoreValidator implements ConstraintValid
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext constraintValidatorContext) {
-        return UsernameValidator.notContainConsecutiveUnderscore(username);
+        return UsernameValidator.notContainConsecutiveUnderscore(username, config.ignoreBlank());
     }
 }

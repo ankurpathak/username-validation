@@ -21,7 +21,7 @@ public class NotContainConsecutivePeriodValidator implements ConstraintValidator
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext constraintValidatorContext) {
-        return UsernameValidator.notContainConsecutivePeriod(username);
+        return UsernameValidator.notContainConsecutivePeriod(username, config.ignoreBlank());
     }
 
 }

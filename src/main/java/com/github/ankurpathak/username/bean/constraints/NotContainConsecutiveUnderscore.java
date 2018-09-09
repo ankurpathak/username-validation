@@ -23,6 +23,9 @@ public @interface NotContainConsecutiveUnderscore {
 
     Class<?>[] groups() default {};
 
+    boolean ignoreBlank() default true;
+
+
     Class<? extends Payload>[] payload() default {};
 
     @Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE})
