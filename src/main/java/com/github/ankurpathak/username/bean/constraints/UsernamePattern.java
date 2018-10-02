@@ -19,6 +19,7 @@ import static com.github.ankurpathak.username.bean.constraints.validator.Usernam
 public @interface UsernamePattern {
     boolean includePeriod() default true;
     boolean includeUnderscore() default false;
+    boolean includeDigit() default true;
     boolean ignoreBlank() default true;
     Class<?>[] groups() default {};
     String message() default MESSAGE_TEMPLATE_USE_PERIOD;

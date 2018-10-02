@@ -10,7 +10,8 @@ public class UsernameValidator {
     public static final String CONSECUTIVE_UNDERSCORE = "__";
     public static final String PERIOD_FOLLOWED_BY_UNDERSCORE = "._";
     public static final String UNDERSCORE_FOLLOWED_BY_PERIOD = "_.";
-    public static final String START_USERNAME_PATTERN = "[a-z0-9";
+    public static final String START_USERNAME_PATTERN = "[a-z";
+    public static final String DIGIT = "0-9";
     public static final String PERIOD = ".";
     public static final String UNDERSCORE = "_";
     public static final String ONE_OR_MORE = "+";
@@ -119,8 +120,10 @@ public class UsernameValidator {
 
 
 
-    public static boolean containOnlyAlphaNumeric(String username, boolean includePeriod, boolean includeUnderscore, boolean ignoreBlank) {
-        StringBuffer sb = new StringBuffer(START_USERNAME_PATTERN);
+    public static boolean containOnlyAlphaNumeric(String username, boolean includeDigit, boolean includePeriod, boolean includeUnderscore, boolean ignoreBlank) {
+        StringBuilder sb = new StringBuilder(START_USERNAME_PATTERN);
+        if(includeDigit)
+            sb.append(DIGIT);
         if (includePeriod)
             sb.append(PERIOD);
         if (includeUnderscore)
