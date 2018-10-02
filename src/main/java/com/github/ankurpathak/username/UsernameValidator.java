@@ -52,7 +52,7 @@ public class UsernameValidator {
     }
 
 
-        private static boolean notContainConsecutivePattern(String username, String consecutivePattern) {
+    private static boolean notContainConsecutivePattern(String username, String consecutivePattern) {
         return notContainConsecutivePattern(username, consecutivePattern, true);
     }
 
@@ -90,6 +90,33 @@ public class UsernameValidator {
             return startOrEnd != null && (Character.isDigit(startOrEnd) || Character.isAlphabetic(startOrEnd));
         }
     }
+
+    private static boolean startOrEndWithAlphabet(String username, Character startOrEnd, boolean ignoreBlank) {
+        if (Strings.isBlank(username)) {
+            return ignoreBlank;
+        } else {
+            return startOrEnd != null && Character.isAlphabetic(startOrEnd);
+        }
+    }
+
+
+    public static boolean endWithAlphabet(String username) {
+        return endWithAlphabet(username, true);
+    }
+
+
+    public static boolean endWithAlphabet(String username, boolean ignoreBlank) {
+        return startOrEndWithAlphabet(username, Strings.lastChar(username), ignoreBlank);
+    }
+
+    public static boolean startWithAlphabet(String username, boolean ignoreBlank) {
+        return startOrEndWithAlphabet(username, Strings.firstChar(username), ignoreBlank);
+    }
+
+    public static boolean startWithAlphabet(String username) {
+        return startWithAlphabet(username, true);
+    }
+
 
 
     public static boolean containOnlyAlphaNumeric(String username, boolean includePeriod, boolean includeUnderscore, boolean ignoreBlank) {
