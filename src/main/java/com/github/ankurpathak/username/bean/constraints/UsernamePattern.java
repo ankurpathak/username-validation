@@ -5,7 +5,7 @@ import com.github.ankurpathak.username.bean.constraints.validator.UsernamePatter
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
-import static com.github.ankurpathak.username.bean.constraints.validator.UsernamePatternValidator.MESSAGE_TEMPLATE_USE_PERIOD;
+
 
 /**
  * Created by ankur on 07-04-2017.
@@ -22,7 +22,7 @@ public @interface UsernamePattern {
     boolean includeDigit() default true;
     boolean ignoreBlank() default true;
     Class<?>[] groups() default {};
-    String message() default MESSAGE_TEMPLATE_USE_PERIOD;
+    String message() default "{com.github.ankurpathak.username.bean.constraints.UsernamePattern.message}";
     Class<? extends Payload>[] payload() default {};
 
     @Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE})
