@@ -15,11 +15,18 @@ Library has different constraint to deal with username validation:
 8. NotContainPeriodFollowedByUnderscore to check username not contain period followed by underscore
 9. NotContainUnderscoreFollowedByPeriod to check username not contain underscore followed by period
 
-All the constraints by default ignore blank so that it will be reported separately by NotBlank standard bean validation constraint and same can we turned of using ignoreBlank(true by default) flag of each constraint. So google like username can be achieved by:
+All the constraints by default ignore blank so that it will be reported separately by NotBlank 
+standard bean validation constraint and same can we turned of using ignoreBlank(true by default) 
+flag of each constraint. 
 
+So simple example like to use library can be like this:
+<pre>
+<code>
         @UsernamePattern
         @StartWithAlphaNumeric
         @NotContainConsecutivePeriod
         @EndWithAlphaNumeric
         @NotBlank
         private String username;
+</code>
+</pre>
