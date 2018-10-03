@@ -1,4 +1,7 @@
 # Username Validation
+[![Build Status](https://travis-ci.org/ankurpathak/username-validation.svg?branch=master)](https://travis-ci.org/ankurpathak/username-validation)
+[![](https://img.shields.io/github/license/ankurpathak/username-validation.svg)](https://github.com/ankurpathak/junit5-mockito1/blob/master/LICENCE)
+
 Java library for username validation for general use
 and with bean validation api.
 It has all constraints for google like username validation and many more.
@@ -20,13 +23,22 @@ standard bean validation constraint and same can we turned of using ignoreBlank(
 flag of each constraint. 
 
 So simple example like to use library can be like this:
-<pre>
-<code>
+```
         @UsernamePattern
         @StartWithAlphaNumeric
         @NotContainConsecutivePeriod
         @EndWithAlphaNumeric
         @NotBlank
         private String username;
-</code>
-</pre>
+```
+
+Use the library by simply including the maven coordinates in your project:
+```
+        <dependency>
+            <groupId>com.github.ankurpathak.username</groupId>
+            <artifactId>username-validation</artifactId>
+            <version>1.3</version>
+        </dependency>
+```
+For help regarding other build tools visit the [Maven Homepage](https://mvnrepository.com/artifact/com.github.ankurpathak.username/username-validation
+) of project.

@@ -1,0 +1,36 @@
+os: linux
+
+dist: xenial
+
+sudo: false
+
+language: java
+
+jdk:
+  oraclejdk11
+
+cache:
+  directories:
+    - $HOME/.m2
+
+before_deploy:
+  - echo $GPG_SECRET_KEYS | base64 --decode | gpg --import
+  - echo $GPG_OWNERTRUST | base64 --decode | gpg --import-ownertrust
+
+deploy:
+  -
+    provider: script
+    script: mvn clean deploy --settings .maven.xml -D skipTests=true -B -U -P release
+    on:
+      tags: true
+  -
+    provider: releases
+    api_key: $GITHUB_API_KEY
+    file_glob: true
+    file:
+      - "target/*.zip"
+      - "target/*.tar.gz"
+    skip_cleanup: true
+    on:
+      tags: true
+
