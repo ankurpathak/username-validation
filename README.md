@@ -1,4 +1,7 @@
 # Username Validation
+[![Build Status](https://travis-ci.org/ankurpathak/username-validation.svg?branch=master)](https://travis-ci.org/ankurpathak/username-validation)
+[![](https://img.shields.io/github/license/ankurpathak/username-validation.svg)](https://github.com/ankurpathak/junit5-mockito1/blob/master/LICENCE)
+
 Java library for username validation for general use
 and with bean validation api.
 It has all constraints for google like username validation and many more.
